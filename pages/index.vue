@@ -1,11 +1,13 @@
 <template>
-   <div class="container mx-auto p-4">
-      <h1>Homepage</h1>
-      <p>Benvenuto nella homepage del mio sito!</p>
-      <button class="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3"><a href="products">prodotti</a></button>
-    
-      <!-- Puoi aggiungere qui altri contenuti della tua homepage -->
+    <main id="content">
+    <div class="text-center py-10 px-4 sm:px-6 lg:px-8">
+      <h1 class="block text-2xl font-bold text-white sm:text-4xl">Cover Page</h1>
+      <p class="mt-3 text-lg text-gray-300 dark:text-neutral-400">Cover is a one-page template for building simple and beautiful home pages using Tailwind CSS.</p>
+      <div class="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
+       
+      </div>
     </div>
+  </main>
   </template>
   
   <script>

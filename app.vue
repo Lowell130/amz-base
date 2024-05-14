@@ -1,7 +1,7 @@
 <template>
-  <div>
+   <div class="max-w-[80rem] flex flex-col mx-auto size-full">
     <header>
-      <!-- Includi qui il tuo header -->
+      <SiteHeader />
     </header>
 
     <!-- Qui includi il contenuto dinamico delle pagine -->
@@ -11,6 +11,7 @@
 
     <footer>
       <!-- Includi qui il tuo footer -->
+      <SiteFooter />
     </footer>
   </div>
 </template>
