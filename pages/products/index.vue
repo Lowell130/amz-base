@@ -153,19 +153,34 @@
 import { ref, computed } from "vue";
 
 
-// Aggiungi il filtro per limitare il numero di caratteri nel titolo
-const truncateText = (text, maxLength) => {
-  if (text.length > maxLength) {
-    return text.slice(0, maxLength) + "...";
-  } else {
-    return text;
-  }
-};
-
-
+// Definizione delle variabili di stato
 const pageSize = 20;
 const currentPage = ref(1);
 
+// Funzione per passare alla pagina successiva
+function nextPage() {
+  console.log("Next page clicked");
+  currentPage.value++;
+  scrollToTop();
+}
+
+// Funzione per passare alla pagina precedente
+function prevPage() {
+  console.log("Previous page clicked");
+  currentPage.value--;
+  scrollToTop();
+}
+
+// Funzione per lo scorrimento verso l'alto della pagina
+function scrollToTop() {
+  console.log("Scrolling to top");
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+// Utilizzo di useFetch per ottenere i dati dei prodotti dall'API
 const { pending, data: allProducts } = useFetch(
   "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/schedemadri",
   {
@@ -183,30 +198,15 @@ const { pending, data: allProducts } = useFetch(
   }
 );
 
+// Calcolo del numero totale di pagine
 const totalPages = computed(() =>
   Math.ceil(allProducts.value.length / pageSize)
 );
 
+// Calcolo dei prodotti da visualizzare nella pagina corrente
 const paginatedProducts = computed(() => {
   const startIndex = (currentPage.value - 1) * pageSize;
   return allProducts.value.slice(startIndex, startIndex + pageSize);
 });
-
-function nextPage() {
-  currentPage.value++;
-  scrollToTop();
-}
-
-function prevPage() {
-  currentPage.value--;
-  scrollToTop();
-}
-
-function scrollToTop() {
-  // Aggiungi un effetto di scorrimento fluido
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
 </script>
+
