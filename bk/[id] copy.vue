@@ -35,7 +35,7 @@ const router = useRouter();
 
 
 
-const { pending, data: products } = await useFetch(
+const { pending, data: products } = useFetch(
   "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/schedemadri",
   {
     lazy: false,
@@ -44,31 +44,5 @@ const { pending, data: products } = await useFetch(
     },
   }
 );
-
-// Se products è un oggetto, estrai il valore dell'array _rawValue
-const productList = products._rawValue || [];
-
-// Trova il prodotto corrispondente all'id specificato nella route
-const selectedProduct = productList.find(product => product._id === id);
-
-// Se il prodotto è stato trovato, stampa il Title nella console
-if (selectedProduct) {
-  console.log("Title:", selectedProduct.Title);
-  console.log("Brand:", selectedProduct.Brand); // Log del Brand
-} else {
-  console.log("Prodotto non trovato");
-}
-useServerSeoMeta({
-    // ogTitle: () => title,
-    title: () => selectedProduct.Title,
-    // description: () => productDetails.description,
-    // ogDescription: () => productDetails.description,
-    // ogImage: () => productDetails.thumbnail,
-    // ogImageUrl: () => productDetails.thumbnail,
-    // twitterCard: () => 'summary_large_image',
-    // twitterTitle: () => title,
-    // twitterDescription: () => productDetails.description,
-    // twitterImage: () => productDetails.thumbnail
-  })
 </script>
 

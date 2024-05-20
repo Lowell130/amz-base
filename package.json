@@ -10,11 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^5.1.5",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@nuxtjs/seo": "^2.0.0-rc.10",
     "autoprefixer": "^10.4.19",
     "graphql": "^16.8.1",
     "nuxt-graphql-request": "^7.0.5",
