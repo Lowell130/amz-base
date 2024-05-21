@@ -4,10 +4,10 @@
     <div @click="router.go(-1)" class="cursor-pointer">
       <p>Back</p>
     </div>
-    <div v-if="pending">
+    <!-- <div v-if="pending">
       <p>Loading ...</p>
-    </div>
-    <div v-else class="px-6 py-10">
+    </div> -->
+    <div  class="px-6 py-10">
       <div v-for="product in products" :key="product.id">
         <div
           v-if="product._id == id"
@@ -35,10 +35,10 @@ const router = useRouter();
 
 
 
-const { pending, data: products } = await useFetch(
+const {data: products } = await useFetch(
   "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/schedemadri",
   {
-    lazy: false,
+    // lazy: false,
     transform: (products) => {
         return products;
     },
@@ -53,10 +53,10 @@ const selectedProduct = productList.find(product => product._id === id);
 
 // Se il prodotto è stato trovato, stampa il Title nella console
 if (selectedProduct) {
-  console.log("Title:", selectedProduct.Title);
-  console.log("Brand:", selectedProduct.Brand); // Log del Brand
+  // console.log("Title:", selectedProduct.Title);
+  // console.log("Brand:", selectedProduct.Brand); // Log del Brand
 } else {
-  console.log("Prodotto non trovato");
+  // console.log("Prodotto non trovato");
 }
 useServerSeoMeta({
     // ogTitle: () => title,
