@@ -44,7 +44,7 @@
           <a class="relative inline-block text-black before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-lime-400" href="#" aria-current="page">Work</a>
         </div>
         <div>
-          <a class="inline-block text-black hover:text-gray-600" href="/products">Prodotti</a>
+          <a class="inline-block text-black hover:text-gray-600" href="/products/">Componenti</a>
         </div>
         <div>
           <a class="inline-block text-black hover:text-gray-600" href="#">About</a>
