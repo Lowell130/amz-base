@@ -13,7 +13,7 @@ export default defineNuxtConfig({
  
   },
   modules: ['@nuxtjs/seo'],
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
