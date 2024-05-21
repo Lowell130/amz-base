@@ -53,7 +53,7 @@
   </button>
 </div>
 
-            <div class="mt-6 flex flex-wrap justify-center gap-6 mx-auto">
+            <!-- <div class="mt-6 flex flex-wrap justify-center gap-6 mx-auto">
               <div class="rounded-xl p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
                 <img src="https://readymadeui.com/images/laptop2.webp" alt="Product2" class="w-24 cursor-pointer" />
               </div>
@@ -66,7 +66,9 @@
               <div class="rounded-xl p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
                 <img src="https://readymadeui.com/images/laptop5.webp" alt="Product2" class="w-24 cursor-pointer" />
               </div>
-            </div>
+            </div> -->
+
+
           </div>
 
           <div class="lg:col-span-2">
