@@ -191,14 +191,9 @@
                 type="button"
                 class="min-w-[200px] px-4 py-3 bg-[#333] hover:bg-[#111] text-white text-sm font-semibold rounded"
               >
-                Buy now
+               Acquista
               </button>
-              <button
-                type="button"
-                class="min-w-[200px] px-4 py-2.5 border border-[#333] bg-transparent hover:bg-gray-50 text-[#333] text-sm font-semibold rounded"
-              >
-                Add to cart
-              </button>
+            
             </div>
           </div>
         </div>
