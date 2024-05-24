@@ -201,78 +201,79 @@
         <div class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
   <h3 class="text-lg font-bold text-[#333]">Product information</h3>
   <ul class="mt-6 space-y-6 text-[#333]">
-    <li class="text-sm" v-if="product.Marca">
-      Marca <span class="ml-4 float-right">{{ product.Marca }}</span>
-    </li>
-    <li class="text-sm" v-if="product.Produttore">
-      Produttore <span class="ml-4 float-right">{{ product.Produttore }}</span>
-    </li>
-    <li class="text-sm" v-if="product.serie">
-      Serie <span class="ml-4 float-right">{{ product.serie }}</span>
-    </li>
-    <li class="text-sm" v-if="product.colore">
-      Colore <span class="ml-4 float-right">{{ product.colore }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Dimensioni prodotto']">
-      Dimensioni prodotto <span class="ml-4 float-right">{{ product['Dimensioni prodotto'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Numero modello articolo']">
-      Numero modello articolo <span class="ml-4 float-right">{{ product['Numero modello articolo'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product.Risoluzione">
-      Risoluzione <span class="ml-4 float-right">{{ product.Risoluzione }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Clock di Memoria']">
-      Clock di Memoria <span class="ml-4 float-right">{{ product['Clock di Memoria'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Coprocessore grafico']">
-      Coprocessore grafico <span class="ml-4 float-right">{{ product['Coprocessore grafico'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Grafica Chipset Brand']">
-      Grafica Chipset Brand <span class="ml-4 float-right">{{ product['Grafica Chipset Brand'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Descrizione scheda grafica']">
-      Descrizione scheda grafica <span class="ml-4 float-right">{{ product['Descrizione scheda grafica'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Tipo memoria scheda grafica']">
-      Tipo memoria scheda grafica <span class="ml-4 float-right">{{ product['Tipo memoria scheda grafica'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Dimensioni memoria scheda grafica']">
-      Dimensioni memoria scheda grafica <span class="ml-4 float-right">{{ product['Dimensioni memoria scheda grafica'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Interfaccia scheda grafica']">
-      Interfaccia scheda grafica <span class="ml-4 float-right">{{ product['Interfaccia scheda grafica'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product.Wattaggio">
-      Wattaggio <span class="ml-4 float-right">{{ product.Wattaggio }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Piattaforma Hardware']">
-      Piattaforma Hardware <span class="ml-4 float-right">{{ product['Piattaforma Hardware'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Le batterie sono incluse']">
-      Le batterie sono incluse <span class="ml-4 float-right">{{ product['Le batterie sono incluse'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Peso articolo']">
-      Peso articolo <span class="ml-4 float-right">{{ product['Peso articolo'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product['Aggiornamenti software garantiti fino a']">
-      Aggiornamenti software garantiti fino a <span class="ml-4 float-right">{{ product['Aggiornamenti software garantiti fino a'] }}</span>
-    </li>
-    <li class="text-sm" v-if="product.Features1">
-      Features1 <span class="ml-4 float-right">{{ product.Features1 }}</span>
-    </li>
-    <li class="text-sm" v-if="product.Features2">
-      Features2 <span class="ml-4 float-right">{{ product.Features2 }}</span>
-    </li>
-    <li class="text-sm" v-if="product.Features3">
-      Features3 <span class="ml-4 float-right">{{ product.Features3 }}</span>
-    </li>
-    <li class="text-sm" v-if="product.Features4">
-      Features4 <span class="ml-4 float-right">{{ product.Features4 }}</span>
-    </li>
-    <li class="text-sm" v-if="product.Features5">
-      Features5 <span class="ml-4 float-right">{{ product.Features5 }}</span>
-    </li>
+    <li v-if="product.Marca">
+  <span class="text-sm font-bold">Marca</span><span style="display: block;">{{ product.Marca }}</span>
+</li>
+<li v-if="product.Produttore">
+  <span class="text-sm font-bold">Produttore</span><span style="display: block;">{{ product.Produttore }}</span>
+</li>
+<li v-if="product.serie">
+  <span class="text-sm font-bold">Serie</span><span style="display: block;">{{ product.serie }}</span>
+</li>
+<li v-if="product.colore">
+  <span class="text-sm font-bold">Colore</span><span style="display: block;">{{ product.colore }}</span>
+</li>
+<li v-if="product['Dimensioni prodotto']">
+  <span class="text-sm font-bold">Dimensioni prodotto</span><span style="display: block;">{{ product['Dimensioni prodotto'] }}</span>
+</li>
+<li v-if="product['Numero modello articolo']">
+  <span class="text-sm font-bold">Numero modello articolo</span><span style="display: block;">{{ product['Numero modello articolo'] }}</span>
+</li>
+<li v-if="product.Risoluzione">
+  <span class="text-sm font-bold">Risoluzione</span><span style="display: block;">{{ product.Risoluzione }}</span>
+</li>
+<li v-if="product['Clock di Memoria']">
+  <span class="text-sm font-bold">Clock di Memoria</span><span style="display: block;">{{ product['Clock di Memoria'] }}</span>
+</li>
+<li v-if="product['Coprocessore grafico']">
+  <span class="text-sm font-bold">Coprocessore grafico</span><span style="display: block;">{{ product['Coprocessore grafico'] }}</span>
+</li>
+<li v-if="product['Grafica Chipset Brand']">
+  <span class="text-sm font-bold">Grafica Chipset Brand</span><span style="display: block;">{{ product['Grafica Chipset Brand'] }}</span>
+</li>
+<li v-if="product['Descrizione scheda grafica']">
+  <span class="text-sm font-bold">Descrizione scheda grafica</span><span style="display: block;">{{ product['Descrizione scheda grafica'] }}</span>
+</li>
+<li v-if="product['Tipo memoria scheda grafica']">
+  <span class="text-sm font-bold">Tipo memoria scheda grafica</span><span style="display: block;">{{ product['Tipo memoria scheda grafica'] }}</span>
+</li>
+<li v-if="product['Dimensioni memoria scheda grafica']">
+  <span class="text-sm font-bold">Dimensioni memoria scheda grafica</span><span style="display: block;">{{ product['Dimensioni memoria scheda grafica'] }}</span>
+</li>
+<li v-if="product['Interfaccia scheda grafica']">
+  <span class="text-sm font-bold">Interfaccia scheda grafica</span><span style="display: block;">{{ product['Interfaccia scheda grafica'] }}</span>
+</li>
+<li v-if="product.Wattaggio">
+  <span class="text-sm font-bold">Wattaggio</span><span style="display: block;">{{ product.Wattaggio }}</span>
+</li>
+<li v-if="product['Piattaforma Hardware']">
+  <span class="text-sm font-bold">Piattaforma Hardware</span><span style="display: block;">{{ product['Piattaforma Hardware'] }}</span>
+</li>
+<li v-if="product['Le batterie sono incluse']">
+  <span class="text-sm font-bold">Le batterie sono incluse</span><span style="display: block;">{{ product['Le batterie sono incluse'] }}</span>
+</li>
+<li v-if="product['Peso articolo']">
+  <span class="text-sm font-bold">Peso articolo</span><span style="display: block;">{{ product['Peso articolo'] }}</span>
+</li>
+<li v-if="product['Aggiornamenti software garantiti fino a']">
+  <span class="text-sm font-bold">Aggiornamenti software garantiti fino a</span><span style="display: block;">{{ product['Aggiornamenti software garantiti fino a'] }}</span>
+</li>
+<li v-if="product.Features1">
+  <span class="text-sm font-bold">Features1</span><span style="display: block;">{{ product.Features1 }}</span>
+</li>
+<li v-if="product.Features2">
+  <span class="text-sm font-bold">Features2</span><span style="display: block;">{{ product.Features2 }}</span>
+</li>
+<li v-if="product.Features3">
+  <span class="text-sm font-bold">Features3</span><span style="display: block;">{{ product.Features3 }}</span>
+</li>
+<li v-if="product.Features4">
+  <span class="text-sm font-bold">Features4</span><span style="display: block;">{{ product.Features4 }}</span>
+</li>
+<li v-if="product.Features5">
+  <span class="text-sm font-bold">Features5</span><span style="display: block;">{{ product.Features5 }}</span>
+</li>
+
   </ul>
 </div>
 
