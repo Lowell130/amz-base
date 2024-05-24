@@ -1,5 +1,5 @@
 <template>
-  <div class="px-6 py-10">
+   <div class="md:px-6 py-10">
     <!-- <p>id product: {{ id }}</p> -->
     <!-- <button @click="router.go(-1)" class="cpx-4 h-10 me-3 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
       <p>Back</p>
@@ -61,29 +61,18 @@
         >
           <!-- <div class="lg:col-span-3 w-full lg:sticky top-0 text-center"> -->
           <div class="lg:col-span-3 w-full top-0 text-center">
-            <div
-              class="flex items-center justify-center px-4 py-10 relative"
-            >
-              <img
-                :src="product.Thumbnail"
-                :alt="product.Title"
-                class="max-w-[20] h-[15rem] rounded object-container"
-              />
-              <!-- <button type="button" class="absolute top-4 right-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20px"
-                  fill="#ccc"
-                  class="mr-1 hover:fill-[#333]"
-                  viewBox="0 0 64 64"
-                >
-                  <path
-                    d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                    data-original="#000000"
-                  ></path>
-                </svg>
-              </button> -->
+            <div class="flex items-center justify-center px-4 py-10 relative">
+              <div
+                class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+              >
+                <img
+                  :src="product.Thumbnail"
+                  :alt="product.Title"
+                  class="w-full max-h-96 object-contain"
+                />
+              </div>
             </div>
+
 
             <!-- <div class="mt-6 flex flex-wrap justify-center gap-6 mx-auto">
               <div class="rounded-xl p-4 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">

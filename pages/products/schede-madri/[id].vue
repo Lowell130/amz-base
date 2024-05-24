@@ -1,5 +1,5 @@
 <template>
-  <div class="px-6 py-10">
+  <div class="md:px-6 py-10">
     <!-- <p>id product: {{ id }}</p> -->
     <!-- <button @click="router.go(-1)" class="cpx-4 h-10 me-3 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
       <p>Back</p>
@@ -61,28 +61,17 @@
         >
           <!-- <div class="lg:col-span-3 w-full lg:sticky top-0 text-center"> -->
           <div class="lg:col-span-3 w-full top-0 text-center">
-            <div
-              class="flex items-center justify-center px-4 py-10 relative"
-            >
-              <img
-                :src="product.Thumbnail"
-                :alt="product.Title"
-                class="max-w-[20] h-[15rem] rounded object-container"
-              />
-              <button type="button" class="absolute top-4 right-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20px"
-                  fill="#ccc"
-                  class="mr-1 hover:fill-[#333]"
-                  viewBox="0 0 64 64"
-                >
-                  <path
-                    d="M45.5 4A18.53 18.53 0 0 0 32 9.86 18.5 18.5 0 0 0 0 22.5C0 40.92 29.71 59 31 59.71a2 2 0 0 0 2.06 0C34.29 59 64 40.92 64 22.5A18.52 18.52 0 0 0 45.5 4ZM32 55.64C26.83 52.34 4 36.92 4 22.5a14.5 14.5 0 0 1 26.36-8.33 2 2 0 0 0 3.27 0A14.5 14.5 0 0 1 60 22.5c0 14.41-22.83 29.83-28 33.14Z"
-                    data-original="#000000"
-                  ></path>
-                </svg>
-              </button>
+
+            <div class="flex items-center justify-center px-4 py-10 relative">
+              <div
+                class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+              >
+                <img
+                  :src="product.Thumbnail"
+                  :alt="product.Title"
+                  class="w-full max-h-96 object-contain"
+                />
+              </div>
             </div>
 
             <!-- <div class="mt-6 flex flex-wrap justify-center gap-6 mx-auto">
@@ -191,94 +180,147 @@
                 type="button"
                 class="min-w-[200px] px-4 py-3 bg-[#333] hover:bg-[#111] text-white text-sm font-semibold rounded"
               >
-               Acquista
+                Acquista
               </button>
-            
             </div>
           </div>
         </div>
 
-        <div class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
-  <h3 class="text-lg font-bold text-[#333]">Product information</h3>
-  <ul class="mt-6 space-y-6 text-[#333]">
-    <li v-if="product.Marca">
-  <span class="text-sm font-bold">Marca</span><span style="display: block;">{{ product.Marca }}</span>
-</li>
-<li v-if="product.Produttore">
-  <span class="text-sm font-bold">Produttore</span><span style="display: block;">{{ product.Produttore }}</span>
-</li>
-<li v-if="product.serie">
-  <span class="text-sm font-bold">Serie</span><span style="display: block;">{{ product.serie }}</span>
-</li>
-<li v-if="product.colore">
-  <span class="text-sm font-bold">Colore</span><span style="display: block;">{{ product.colore }}</span>
-</li>
-<li v-if="product['Dimensioni prodotto']">
-  <span class="text-sm font-bold">Dimensioni prodotto</span><span style="display: block;">{{ product['Dimensioni prodotto'] }}</span>
-</li>
-<li v-if="product['Numero modello articolo']">
-  <span class="text-sm font-bold">Numero modello articolo</span><span style="display: block;">{{ product['Numero modello articolo'] }}</span>
-</li>
-<li v-if="product.Risoluzione">
-  <span class="text-sm font-bold">Risoluzione</span><span style="display: block;">{{ product.Risoluzione }}</span>
-</li>
-<li v-if="product['Clock di Memoria']">
-  <span class="text-sm font-bold">Clock di Memoria</span><span style="display: block;">{{ product['Clock di Memoria'] }}</span>
-</li>
-<li v-if="product['Coprocessore grafico']">
-  <span class="text-sm font-bold">Coprocessore grafico</span><span style="display: block;">{{ product['Coprocessore grafico'] }}</span>
-</li>
-<li v-if="product['Grafica Chipset Brand']">
-  <span class="text-sm font-bold">Grafica Chipset Brand</span><span style="display: block;">{{ product['Grafica Chipset Brand'] }}</span>
-</li>
-<li v-if="product['Descrizione scheda grafica']">
-  <span class="text-sm font-bold">Descrizione scheda grafica</span><span style="display: block;">{{ product['Descrizione scheda grafica'] }}</span>
-</li>
-<li v-if="product['Tipo memoria scheda grafica']">
-  <span class="text-sm font-bold">Tipo memoria scheda grafica</span><span style="display: block;">{{ product['Tipo memoria scheda grafica'] }}</span>
-</li>
-<li v-if="product['Dimensioni memoria scheda grafica']">
-  <span class="text-sm font-bold">Dimensioni memoria scheda grafica</span><span style="display: block;">{{ product['Dimensioni memoria scheda grafica'] }}</span>
-</li>
-<li v-if="product['Interfaccia scheda grafica']">
-  <span class="text-sm font-bold">Interfaccia scheda grafica</span><span style="display: block;">{{ product['Interfaccia scheda grafica'] }}</span>
-</li>
-<li v-if="product.Wattaggio">
-  <span class="text-sm font-bold">Wattaggio</span><span style="display: block;">{{ product.Wattaggio }}</span>
-</li>
-<li v-if="product['Piattaforma Hardware']">
-  <span class="text-sm font-bold">Piattaforma Hardware</span><span style="display: block;">{{ product['Piattaforma Hardware'] }}</span>
-</li>
-<li v-if="product['Le batterie sono incluse']">
-  <span class="text-sm font-bold">Le batterie sono incluse</span><span style="display: block;">{{ product['Le batterie sono incluse'] }}</span>
-</li>
-<li v-if="product['Peso articolo']">
-  <span class="text-sm font-bold">Peso articolo</span><span style="display: block;">{{ product['Peso articolo'] }}</span>
-</li>
-<li v-if="product['Aggiornamenti software garantiti fino a']">
-  <span class="text-sm font-bold">Aggiornamenti software garantiti fino a</span><span style="display: block;">{{ product['Aggiornamenti software garantiti fino a'] }}</span>
-</li>
-<li v-if="product.Features1">
-  <span class="text-sm font-bold">Features1</span><span style="display: block;">{{ product.Features1 }}</span>
-</li>
-<li v-if="product.Features2">
-  <span class="text-sm font-bold">Features2</span><span style="display: block;">{{ product.Features2 }}</span>
-</li>
-<li v-if="product.Features3">
-  <span class="text-sm font-bold">Features3</span><span style="display: block;">{{ product.Features3 }}</span>
-</li>
-<li v-if="product.Features4">
-  <span class="text-sm font-bold">Features4</span><span style="display: block;">{{ product.Features4 }}</span>
-</li>
-<li v-if="product.Features5">
-  <span class="text-sm font-bold">Features5</span><span style="display: block;">{{ product.Features5 }}</span>
-</li>
+        <div
+          class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6"
+        >
+          <h3 class="text-lg font-bold text-[#333]">Product information</h3>
+          <ul class="mt-6 space-y-6 text-[#333]">
+            <li v-if="product.Marca">
+              <span class="text-sm font-bold">Marca</span
+              ><span style="display: block">{{ product.Marca }}</span>
+            </li>
+            <li v-if="product.Produttore">
+              <span class="text-sm font-bold">Produttore</span
+              ><span style="display: block">{{ product.Produttore }}</span>
+            </li>
+            <li v-if="product.serie">
+              <span class="text-sm font-bold">Serie</span
+              ><span style="display: block">{{ product.serie }}</span>
+            </li>
+            <li v-if="product.colore">
+              <span class="text-sm font-bold">Colore</span
+              ><span style="display: block">{{ product.colore }}</span>
+            </li>
+            <li v-if="product['Dimensioni prodotto']">
+              <span class="text-sm font-bold">Dimensioni prodotto</span
+              ><span style="display: block">{{
+                product["Dimensioni prodotto"]
+              }}</span>
+            </li>
+            <li v-if="product['Numero modello articolo']">
+              <span class="text-sm font-bold">Numero modello articolo</span
+              ><span style="display: block">{{
+                product["Numero modello articolo"]
+              }}</span>
+            </li>
+            <li v-if="product.Risoluzione">
+              <span class="text-sm font-bold">Risoluzione</span
+              ><span style="display: block">{{ product.Risoluzione }}</span>
+            </li>
+            <li v-if="product['Clock di Memoria']">
+              <span class="text-sm font-bold">Clock di Memoria</span
+              ><span style="display: block">{{
+                product["Clock di Memoria"]
+              }}</span>
+            </li>
+            <li v-if="product['Coprocessore grafico']">
+              <span class="text-sm font-bold">Coprocessore grafico</span
+              ><span style="display: block">{{
+                product["Coprocessore grafico"]
+              }}</span>
+            </li>
+            <li v-if="product['Grafica Chipset Brand']">
+              <span class="text-sm font-bold">Grafica Chipset Brand</span
+              ><span style="display: block">{{
+                product["Grafica Chipset Brand"]
+              }}</span>
+            </li>
+            <li v-if="product['Descrizione scheda grafica']">
+              <span class="text-sm font-bold">Descrizione scheda grafica</span
+              ><span style="display: block">{{
+                product["Descrizione scheda grafica"]
+              }}</span>
+            </li>
+            <li v-if="product['Tipo memoria scheda grafica']">
+              <span class="text-sm font-bold">Tipo memoria scheda grafica</span
+              ><span style="display: block">{{
+                product["Tipo memoria scheda grafica"]
+              }}</span>
+            </li>
+            <li v-if="product['Dimensioni memoria scheda grafica']">
+              <span class="text-sm font-bold"
+                >Dimensioni memoria scheda grafica</span
+              ><span style="display: block">{{
+                product["Dimensioni memoria scheda grafica"]
+              }}</span>
+            </li>
+            <li v-if="product['Interfaccia scheda grafica']">
+              <span class="text-sm font-bold">Interfaccia scheda grafica</span
+              ><span style="display: block">{{
+                product["Interfaccia scheda grafica"]
+              }}</span>
+            </li>
+            <li v-if="product.Wattaggio">
+              <span class="text-sm font-bold">Wattaggio</span
+              ><span style="display: block">{{ product.Wattaggio }}</span>
+            </li>
+            <li v-if="product['Piattaforma Hardware']">
+              <span class="text-sm font-bold">Piattaforma Hardware</span
+              ><span style="display: block">{{
+                product["Piattaforma Hardware"]
+              }}</span>
+            </li>
+            <li v-if="product['Le batterie sono incluse']">
+              <span class="text-sm font-bold">Le batterie sono incluse</span
+              ><span style="display: block">{{
+                product["Le batterie sono incluse"]
+              }}</span>
+            </li>
+            <li v-if="product['Peso articolo']">
+              <span class="text-sm font-bold">Peso articolo</span
+              ><span style="display: block">{{
+                product["Peso articolo"]
+              }}</span>
+            </li>
+            <li v-if="product['Aggiornamenti software garantiti fino a']">
+              <span class="text-sm font-bold"
+                >Aggiornamenti software garantiti fino a</span
+              ><span style="display: block">{{
+                product["Aggiornamenti software garantiti fino a"]
+              }}</span>
+            </li>
+            <li v-if="product.Features1">
+              <span class="text-sm font-bold">Features1</span
+              ><span style="display: block">{{ product.Features1 }}</span>
+            </li>
+            <li v-if="product.Features2">
+              <span class="text-sm font-bold">Features2</span
+              ><span style="display: block">{{ product.Features2 }}</span>
+            </li>
+            <li v-if="product.Features3">
+              <span class="text-sm font-bold">Features3</span
+              ><span style="display: block">{{ product.Features3 }}</span>
+            </li>
+            <li v-if="product.Features4">
+              <span class="text-sm font-bold">Features4</span
+              ><span style="display: block">{{ product.Features4 }}</span>
+            </li>
+            <li v-if="product.Features5">
+              <span class="text-sm font-bold">Features5</span
+              ><span style="display: block">{{ product.Features5 }}</span>
+            </li>
+          </ul>
+        </div>
 
-  </ul>
-</div>
-
-
-        <div class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
+        <div
+          class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6"
+        >
           <h3 class="text-lg font-bold text-[#333]">Reviews(10)</h3>
           <div class="grid md:grid-cols-2 gap-12 mt-6">
             <div>
