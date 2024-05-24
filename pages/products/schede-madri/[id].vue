@@ -91,7 +91,7 @@
           </div>
 
           <div class="lg:col-span-2">
-            <small>{{ product.Brand.replace("Visita lo di ", " ") }}</small>
+            <small>{{ product.Marca }}</small>
             <h2 class="text-2xl font-normal text-[#333]">
               {{ product.Title }}
             </h2>
