@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://example.com',
-    name: 'Fantastico sito',
+    name: 'Fantastico sito di test',
     description: 'Sito di recensioni!',
     defaultLocale: 'it', // not needed if you have @nuxtjs/i18n installed
   },
