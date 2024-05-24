@@ -162,10 +162,8 @@ if (text.length > maxLength) {
 }
 };
 
-
 const route = useRoute();
 const router = useRouter();
-
 const pageSize = 20;
 const currentPage = ref(parseInt(route.query.page) || 1);
 
