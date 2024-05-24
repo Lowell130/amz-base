@@ -146,9 +146,7 @@
     </div>
   </template>
   
-  <script setup>
-
-  import { ref, computed, watchEffect } from "vue";
+  <script setup> 
   import { useRoute, useRouter } from 'vue-router';
 
   definePageMeta({
