@@ -2,8 +2,8 @@
   <div>
       <ul>
       <li>
- <a href="/products/schedemadri">schedeMadri</a><br />
- <a href="/products/schedevideo">schedeVideo</a>
+ <a href="/products/schede-madri">schedeMadri</a><br />
+ <a href="/products/schede-video">schedeVideo</a>
       </li>
   
   </ul>
