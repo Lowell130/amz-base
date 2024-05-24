@@ -31,12 +31,12 @@
       <div v-else class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         <div v-for="producttwo in paginatedProducts" :key="producttwo.id" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <div>
-            <nuxt-link :to="`/producttwos/schedevideo/${producttwo.id}`">
+            <nuxt-link :to="`/products/schedevideo/${producttwo.id}`">
               <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="producttwo.image" :alt="producttwo.title ? producttwo.title : ''"/>
             </nuxt-link>
           </div>
           <div class="px-5 pb-5">
-            <nuxt-link :to="`/producttwos/schedevideo/${producttwo.id}`" :title="producttwo.title">
+            <nuxt-link :to="`/products/schedevideo/${producttwo.id}`" :title="producttwo.title">
               <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                 {{ truncateText(producttwo.title, 30) }}
               </h5>
