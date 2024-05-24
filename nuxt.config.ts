@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   nitro: {
     static: true,
   },
+  
   site: {
     // url: 'https://example.com',
     name: 'Fantastico sito di test',

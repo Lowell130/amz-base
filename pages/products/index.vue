@@ -2,7 +2,7 @@
     <div>
         <ul>
         <li>
-   <a href="/products/schedevideo">schedeVideo</a>
+   <a href="/products/schedemadri">schedeMadri</a>
         </li>
     
     </ul>
