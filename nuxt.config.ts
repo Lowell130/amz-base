@@ -1,18 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // nitro: {
-  //   static: true,
-  // },
-
+  nitro: {
+    static: true,
+  },
   site: {
-    url: 'https://example.com',
+    // url: 'https://example.com',
     name: 'Fantastico sito di test',
     description: 'Sito di recensioni!',
     defaultLocale: 'it', // not needed if you have @nuxtjs/i18n installed
-  },
- 
-  router: {
- 
   },
   modules: ['@nuxtjs/seo'],
   devtools: { enabled: false },
