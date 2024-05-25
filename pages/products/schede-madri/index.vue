@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="pending">
-    <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
+    <div class="pt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
   >
 <div role="status" v-for="product in paginatedProducts" :key="product.id" class="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700">
   <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
@@ -28,7 +28,7 @@
     </div>
 
   </div>
-    <div v-else class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    <div v-else class="pt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       <div v-for="product in paginatedProducts" :key="product.id" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div>
           <nuxt-link :to="`/products/schede-madri/${product.id}`">
@@ -150,16 +150,16 @@
 import { useRoute, useRouter } from 'vue-router';
 
 definePageMeta({
-title: 'My Page Title'
+  title: 'My Page Title'
 })
 
 // Aggiungi il filtro per limitare il numero di caratteri nel titolo
 const truncateText = (text, maxLength) => {
-if (text.length > maxLength) {
-  return text.slice(0, maxLength) + "...";
-} else {
-  return text;
-}
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + "...";
+  } else {
+    return text;
+  }
 };
 
 const route = useRoute();
@@ -186,9 +186,11 @@ const { pending, data: allProducts } = useFetch(
 );
 
 const filteredProducts = computed(() => {
-return allProducts.value.filter(product => parseFloat(product.price) > 0 && product.rank !== 0);
+  if (!allProducts.value) {
+    return [];
+  }
+  return allProducts.value.filter(product => parseFloat(product.price) > 0 && product.rank !== 0);
 });
-
 
 const totalPages = computed(() => 
   Math.ceil(filteredProducts.value.length / pageSize)

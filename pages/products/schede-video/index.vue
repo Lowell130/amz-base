@@ -1,7 +1,7 @@
 <template>
     <div>
       <div v-if="pending">
-      <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
+      <div class="pt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
     >
 <div role="status" v-for="producttwo in paginatedProducts" :key="producttwo.id" class="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700">
     <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
@@ -28,7 +28,7 @@
       </div>
 
     </div>
-      <div v-else class="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      <div v-else class="pt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         <div v-for="producttwo in paginatedProducts" :key="producttwo.id" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <div>
             <nuxt-link :to="`/products/schede-video/${producttwo.id}`">
@@ -148,14 +148,15 @@
     </div>
   </template>
   
-  <script setup> 
-  import { useRoute, useRouter } from 'vue-router';
+ 
+<script setup>
+import { useRoute, useRouter } from 'vue-router';
 
-  definePageMeta({
+definePageMeta({
   title: 'My Page Title'
 })
 
-  // Aggiungi il filtro per limitare il numero di caratteri nel titolo
+// Aggiungi il filtro per limitare il numero di caratteri nel titolo
 const truncateText = (text, maxLength) => {
   if (text.length > maxLength) {
     return text.slice(0, maxLength) + "...";
@@ -164,78 +165,77 @@ const truncateText = (text, maxLength) => {
   }
 };
 
-  
-  const route = useRoute();
-  const router = useRouter();
-  
-  const pageSize = 20;
-  const currentPage = ref(parseInt(route.query.page) || 1);
-  
-  const { pending, data: allProducts } = useFetch(
-    "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/schedevideo",
-    {
-      lazy: false,
-      transform: (producttwos) => {
-        return producttwos.map((producttwo) => ({
-          id: producttwo._id,
-          title: producttwo.Title,
-          image: producttwo.Thumbnail,
-          brand: producttwo.Brand,
-          asin: producttwo.ASIN,
-          price: producttwo.Price,
-          rank: producttwo.SalesRank
-        }));
-      },
-    }
-  );
-  
-  const filteredProducts = computed(() => {
+const route = useRoute();
+const router = useRouter();
+const pageSize = 20;
+const currentPage = ref(parseInt(route.query.page) || 1);
+
+const { pending, data: allProducts } = useFetch(
+  "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/schedevideo",
+  {
+    lazy: false,
+    transform: (producttwos) => {
+      return producttwos.map((producttwo) => ({
+        id: producttwo._id,
+        title: producttwo.Title,
+        image: producttwo.Thumbnail,
+        brand: producttwo.Brand,
+        asin: producttwo.ASIN,
+        price: producttwo.Price,
+        rank: producttwo.SalesRank
+      }));
+    },
+  }
+);
+
+const filteredProducts = computed(() => {
+  if (!allProducts.value) {
+    return [];
+  }
   return allProducts.value.filter(producttwo => parseFloat(producttwo.price) > 0 && producttwo.rank !== 0);
 });
 
-  
-  const totalPages = computed(() => 
-    Math.ceil(filteredProducts.value.length / pageSize)
-  );
-  
-  const paginatedProducts = computed(() => {
-    const startIndex = (currentPage.value - 1) * pageSize;
-    return filteredProducts.value.slice(startIndex, startIndex + pageSize);
+const totalPages = computed(() => 
+  Math.ceil(filteredProducts.value.length / pageSize)
+);
+
+const paginatedProducts = computed(() => {
+  const startIndex = (currentPage.value - 1) * pageSize;
+  return filteredProducts.value.slice(startIndex, startIndex + pageSize);
+});
+
+function nextPage() {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++;
+    updateURL();
+    scrollToTop();
+  }
+}
+
+function prevPage() {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+    updateURL();
+    scrollToTop();
+  }
+}
+
+function updateURL() {
+  router.push({ query: { page: currentPage.value } });
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
-  
-  function nextPage() {
-    if (currentPage.value < totalPages.value) {
-      currentPage.value++;
-      updateURL();
-      scrollToTop();
-    }
+}
+
+// Watch for changes in the route query and update currentPage
+watchEffect(() => {
+  const page = parseInt(route.query.page);
+  if (page) {
+    currentPage.value = page;
   }
-  
-  function prevPage() {
-    if (currentPage.value > 1) {
-      currentPage.value--;
-      updateURL();
-      scrollToTop();
-    }
-  }
-  
-  function updateURL() {
-    router.push({ query: { page: currentPage.value } });
-  }
-  
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-  
-  // Watch for changes in the route query and update currentPage
-  watchEffect(() => {
-    const page = parseInt(route.query.page);
-    if (page) {
-      currentPage.value = page;
-    }
-  });
-  </script>
-  
+});
+</script>

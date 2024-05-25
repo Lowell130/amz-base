@@ -1,7 +1,7 @@
 <template>
-   <div class="max-w-[80rem] flex flex-col mx-auto size-full">
+   <div class="mx-auto size-full">
     <header>
-      <SiteHeader />
+      <NavBar />
     </header>
 
     <!-- Qui includi il contenuto dinamico delle pagine -->

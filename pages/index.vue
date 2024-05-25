@@ -1,5 +1,5 @@
 <template>
-  <div>
+ <div class="container mx-auto pt-28 px-4">
       <ul>
       <li>
  <a href="/products/schede-madri">schedeMadri</a><br />
@@ -7,5 +7,6 @@
       </li>
   
   </ul>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tempore numquam optio harum quas incidunt nisi autem labore distinctio dicta quo aperiam dolor quia doloribus in ut itaque, sunt voluptatum!</p>
   </div>
 </template>
