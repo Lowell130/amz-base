@@ -3,7 +3,7 @@
       <div v-if="pending">
       <div class="pt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
     >
-<div role="status" v-for="producttwo in paginatedProducts" :key="producttwo.id" class="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700">
+<div role="status" v-for="productb in paginatedProducts" :key="productb.id" class="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700">
     <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
         <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
             <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z"/>
@@ -29,21 +29,21 @@
 
     </div>
       <div v-else class="pt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        <div v-for="producttwo in paginatedProducts" :key="producttwo.id" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div v-for="productb in paginatedProducts" :key="productb.id" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <div>
-            <nuxt-link :to="`/products/schede-video/${producttwo.id}`">
-              <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="producttwo.image" :alt="producttwo.title ? producttwo.title : ''"/>
+            <nuxt-link :to="`/products/schede-video/${productb.id}`">
+              <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="productb.image" :alt="productb.title ? productb.title : ''"/>
 
-              <!-- <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="producttwo.image" :alt="producttwo.title ? producttwo.title : ''"/> -->
+              <!-- <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="productb.image" :alt="productb.title ? productb.title : ''"/> -->
             </nuxt-link>
           </div>
           <div class="px-5 pb-5">
-            <nuxt-link :to="`/products/schede-video/${producttwo.id}`" :title="producttwo.title">
+            <nuxt-link :to="`/products/schede-video/${productb.id}`" :title="productb.title">
               <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                {{ truncateText(producttwo.title, 30) }}
+                {{ truncateText(productb.title, 30) }}
               </h5>
             </nuxt-link>
-            <p>{{ producttwo.rank }}</p>
+            <p>{{ productb.rank }}</p>
             <div class="flex items-center mt-2.5 mb-5">
             <div class="flex items-center space-x-1 rtl:space-x-reverse">
               <svg
@@ -109,7 +109,7 @@
           </div>
           <div class="flex items-center justify-between">
             <span class="text-3xl font-bold text-gray-900 dark:text-white"
-              >{{producttwo.price}}</span
+              >{{productb.price}}</span
             >
             <a
               href="#"
@@ -174,15 +174,15 @@ const { pending, data: allProducts } = useFetch(
   "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/schedevideo",
   {
     lazy: false,
-    transform: (producttwos) => {
-      return producttwos.map((producttwo) => ({
-        id: producttwo._id,
-        title: producttwo.Title,
-        image: producttwo.Thumbnail,
-        brand: producttwo.Brand,
-        asin: producttwo.ASIN,
-        price: producttwo.Price,
-        rank: producttwo.SalesRank
+    transform: (productbs) => {
+      return productbs.map((productb) => ({
+        id: productb._id,
+        title: productb.Title,
+        image: productb.Thumbnail,
+        brand: productb.Brand,
+        asin: productb.ASIN,
+        price: productb.Price,
+        rank: productb.SalesRank
       }));
     },
   }
@@ -192,7 +192,7 @@ const filteredProducts = computed(() => {
   if (!allProducts.value) {
     return [];
   }
-  return allProducts.value.filter(producttwo => parseFloat(producttwo.price) > 0 && producttwo.rank !== 0);
+  return allProducts.value.filter(productb => parseFloat(productb.price) > 0 && productb.rank !== 0);
 });
 
 const totalPages = computed(() => 
