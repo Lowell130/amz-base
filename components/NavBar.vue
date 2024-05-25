@@ -30,6 +30,9 @@
             <li>
                 <NuxtLink class="pb-1 uppercase text-xs" to="/products/schede-madri">schede madri</NuxtLink>
             </li>
+            <li>
+                <NuxtLink class="pb-1 uppercase text-xs" to="/products/tablet">tablet</NuxtLink>
+            </li>
             <!-- <li><a href="products/schede-video/" class="">Schede Video</a></li>
             <li><a href="products/schede-madri/" class="">Schede Madri</a></li>
             <li><a href="#" class="">Componenti</a></li>
@@ -72,11 +75,12 @@
           </span>
   
           <ul class="divide-y font-sans">
-            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">Home</a></li>
-            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">Services</a></li>
-            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">Features</a></li>
-            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">FAQ</a></li>
-            <li><a href="#" @click="isOpen = false" class="my-4 inline-block">Contact</a></li>
+            <li><a href="/" @click="isOpen = false" class="my-4 inline-block uppercase text-xs">Home</a></li>
+            <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/schede-madri">schede madri</NuxtLink></li>
+            <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/schede-video">schede video</NuxtLink></li>
+            <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/tablet">tablet</NuxtLink></li>
+
+          
           </ul>
   
        
