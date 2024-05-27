@@ -376,7 +376,7 @@ const productReviews = (product) => {
 
 useServerSeoMeta({
  // ogTitle: () => title,
- title: () => selectedProduct.Title,
+ title: () => `Recensioni ` + selectedProduct.Title,
  // description: () => productDetails.description,
  // ogDescription: () => productDetails.description,
  // ogImage: () => productDetails.thumbnail,
