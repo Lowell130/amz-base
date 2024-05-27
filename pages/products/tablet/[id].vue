@@ -331,6 +331,7 @@
 </template>
 
 <script setup>
+
 import { useRoute } from "vue-router";
 const { id } = useRoute().params;
 const router = useRouter();
@@ -376,7 +377,7 @@ const productReviews = (product) => {
 
 useServerSeoMeta({
  // ogTitle: () => title,
- title: () => selectedProduct.Title,
+ title: () => `Recensioni ` + selectedProduct.Title,
  // description: () => productDetails.description,
  // ogDescription: () => productDetails.description,
  // ogImage: () => productDetails.thumbnail,
