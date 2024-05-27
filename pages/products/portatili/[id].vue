@@ -103,7 +103,7 @@
                 <img src="https://readymadeui.com/profile_6.webp" class="w-12 h-12 rounded-full border-2 border-white" />
                 <div class="ml-3">
                   <!-- <h4 class="text-sm font-bold text-[#333] my-5">{{ review.author }}</h4> -->
-                  <p class="text-sm mt-4 text-[#333]">{{ review.text }}</p>
+                  <p class="text-sm text-[#333]">{{ review.text }}</p>
                 </div>
               
               
