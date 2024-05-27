@@ -100,7 +100,7 @@
             <div v-if="productReviews(product).length > 0">
       <div v-for="review in productReviews(product)" :key="review.id">
               <div class="flex items-start mb-10">
-                <img src="https://readymadeui.com/profile_6.webp" class="w-12 h-12 rounded-full border-2 border-white" />
+                <img src="https://t4.ftcdn.net/jpg/03/59/58/91/360_F_359589186_JDLl8dIWoBNf1iqEkHxhUeeOulx0wOC5.jpg" class="w-12 h-12 rounded-full border-2 border-white" />
                 <div class="ml-3">
                   <!-- <h4 class="text-sm font-bold text-[#333] my-5">{{ review.author }}</h4> -->
                   <p class="text-sm text-[#333]">{{ review.text }}</p>
