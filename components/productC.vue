@@ -1,6 +1,6 @@
 <template>
     <div>
-    <!-- <h3 class="text-gray-600 text-2xl font-medium">Top Tablet</h3> -->
+    <h2 class="text-gray-600 text-2xl font-medium">Prodotti in evidenza</h2> 
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
     >
@@ -25,11 +25,11 @@
             :to="`/products/tablet/${productc.id}`"
             :title="productc.title"
           >
-            <h5
+            <h2
               class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
             >
               {{ truncateText(productc.title, 30) }}
-            </h5>
+            </h2>
           </nuxt-link>
           <p>{{ productc.rank }}</p>
 

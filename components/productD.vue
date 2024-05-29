@@ -26,11 +26,11 @@
         :to="`/products/portatili/${productd.id}`"
         :title="productd.title"
       >
-        <h5
+        <h2
           class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
         >
           {{ truncateText(productd.title, 30) }}
-        </h5>
+        </h2>
       </nuxt-link>
       <p>{{ productd.rank }}</p>
 
