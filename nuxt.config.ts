@@ -7,8 +7,8 @@ export default defineNuxtConfig({
   
   site: {
     // url: 'https://example.com',
-    name: 'Fantastico sito di test',
-    description: 'Sito di recensioni!',
+    name: 'Prodotti informatici',
+    description: 'Migliori prezzi e recensioni per prodotti di informatica, tablet, portatili, componenti e altro ancora',
     defaultLocale: 'it', // not needed if you have @nuxtjs/i18n installed
   },
   modules: ['@nuxtjs/seo'],

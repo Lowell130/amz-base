@@ -184,12 +184,12 @@
       title: () => "Scopri i Nostri Prodotti",
       description: () => "Benvenuti nel nostro e-commerce! Scopri una vasta gamma di prodotti tecnologici di alta qualità: schede video, schede madri, tablet e portatili. Trova le migliori offerte per soddisfare tutte le tue esigenze.",
       ogDescription: () => "Benvenuti nel nostro e-commerce! Scopri una vasta gamma di prodotti tecnologici di alta qualità: schede video, schede madri, tablet e portatili. Trova le migliori offerte per soddisfare tutte le tue esigenze.",
-      ogImage: () => "https://example.com/og-image.jpg",
-      ogImageUrl: () => "https://example.com/og-image.jpg",
+      // ogImage: () => "https://example.com/og-image.jpg",
+      // ogImageUrl: () => "https://example.com/og-image.jpg",
       twitterCard: () => 'summary_large_image',
       twitterTitle: () => "Scopri i Nostri Prodotti",
       twitterDescription: () => "Benvenuti nel nostro e-commerce! Scopri una vasta gamma di prodotti tecnologici di alta qualità: schede video, schede madri, tablet e portatili. Trova le migliori offerte per soddisfare tutte le tue esigenze.",
-      twitterImage: () => "https://example.com/twitter-image.jpg"
+      // twitterImage: () => "https://example.com/twitter-image.jpg"
   });
   </script>
   

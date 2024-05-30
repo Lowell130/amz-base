@@ -375,16 +375,16 @@ const productReviews = (product) => {
 };
 
 useServerSeoMeta({
-  // ogTitle: () => title,
+  ogTitle: () => `Recensioni ` + selectedProduct.Title,
   title: () => `Recensioni ` + selectedProduct.Title,
-  // description: () => productDetails.description,
-  // ogDescription: () => productDetails.description,
-  // ogImage: () => productDetails.thumbnail,
-  // ogImageUrl: () => productDetails.thumbnail,
-  // twitterCard: () => 'summary_large_image',
-  // twitterTitle: () => title,
-  // twitterDescription: () => productDetails.description,
-  // twitterImage: () => productDetails.thumbnail
+  description: () => selectedProduct.Description,
+  ogDescription: () => selectedProduct.Description,
+  ogImage: () => selectedProduct.Thumbnail,
+  // ogImageUrl: () => selectedProduct.Thumbnail,
+  twitterCard: () => 'summary_large_image',
+  twitterTitle: () => `Recensioni ` + selectedProduct.Title,
+  twitterDescription: () => selectedProduct.Description,
+  twitterImage: () => selectedProduct.Thumbnail
 });
 </script>
 
