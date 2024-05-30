@@ -39,6 +39,9 @@
             <li>
                 <NuxtLink class="pb-1 uppercase text-xs" to="/products/portatili">portatili</NuxtLink>
             </li>
+            <li>
+                <NuxtLink class="pb-1 uppercase text-xs" to="/products/stampanti">stampanti</NuxtLink>
+            </li>
             <!-- <li><a href="products/schede-video/" class="">Schede Video</a></li>
             <li><a href="products/schede-madri/" class="">Schede Madri</a></li>
             <li><a href="#" class="">Componenti</a></li>
@@ -87,6 +90,7 @@
             <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/componenti">componenti</NuxtLink></li>
             <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/tablet">tablet</NuxtLink></li>
             <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/portatili">portatili</NuxtLink></li>
+            <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/stampanti">stampanti</NuxtLink></li>
 
           
           </ul>
