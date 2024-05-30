@@ -31,6 +31,9 @@
                 <NuxtLink class="pb-1 uppercase text-xs" to="/products/schede-madri">schede madri</NuxtLink>
             </li>
             <li>
+                <NuxtLink class="pb-1 uppercase text-xs" to="/products/componenti">componenti</NuxtLink>
+            </li>
+            <li>
                 <NuxtLink class="pb-1 uppercase text-xs" to="/products/tablet">tablet</NuxtLink>
             </li>
             <li>
@@ -81,6 +84,7 @@
             <li><a href="/" @click="isOpen = false" class="my-4 inline-block uppercase text-xs">Home</a></li>
             <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/schede-madri">schede madri</NuxtLink></li>
             <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/schede-video">schede video</NuxtLink></li>
+            <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/componenti">componenti</NuxtLink></li>
             <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/tablet">tablet</NuxtLink></li>
             <li><NuxtLink @click="isOpen = false" class="my-4 inline-block uppercase text-xs" to="/products/portatili">portatili</NuxtLink></li>
 

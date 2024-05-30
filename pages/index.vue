@@ -27,7 +27,7 @@
                         <div class="px-10 max-w-xl">
                             <h2 class="text-2xl text-white font-semibold">Componenti</h2>
                             <p class="mt-2 text-gray-400">Trova i migliori componenti per PC nella nostra selezione.</p>
-                            <nuxt-link class="pb-1 uppercase text-xs underline text-white" to="/products">Scopri di più</nuxt-link>
+                            <nuxt-link class="pb-1 uppercase text-xs underline text-white" to="/products/componenti">Scopri di più</nuxt-link>
                         </div>
                     </div>
                 </div>
