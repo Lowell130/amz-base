@@ -93,45 +93,29 @@
           </div>
         </div>
 
+        
         <div class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
-          <!-- <h3 class="text-lg font-bold text-[#333]">Recensioni ({{product.ReviewCount}})</h3> -->
-          <h3 class="text-lg font-bold text-[#333]">Recensioni</h3>
-          <div class="mt-6">
-            <div v-if="productReviews(product).length > 0">
+  <h3 class="text-lg font-bold text-[#333]">Recensioni</h3>
+  <div class="mt-6">
+    <div v-if="productReviews(product).length > 0">
       <div v-for="review in productReviews(product)" :key="review.id">
-              <div class="flex items-start mb-10">
-                <img src="https://t4.ftcdn.net/jpg/03/59/58/91/360_F_359589186_JDLl8dIWoBNf1iqEkHxhUeeOulx0wOC5.jpg" class="w-12 h-12 rounded-full border-2 border-white" />
-                <div class="ml-3">
-                  <!-- <h4 class="text-sm font-bold text-[#333] my-5">{{ review.author }}</h4> -->
-                  <p class="text-sm text-[#333]">{{ review.text }}</p>
-                </div>
-              
-              
-              
-              </div>
-
-           
-
-           
-            </div>
-
-     
-
-          </div>
-          <div v-else>
+        <div class="flex items-start mb-10">
+          <img :src="review.avatar" class="w-12 h-12 rounded-full border-2 border-white" />
+          <div class="ml-3">
+            <p class="text-sm text-[#333]">{{ review.text }}</p>
+          </div>    
+        </div>     
+      </div>
+    </div>
+    <div v-else>
       <p class="text-[#333]">Non sono disponibili recensioni.</p>
     </div>
+    <button type="button" class="w-full mt-10 px-4 py-2.5 bg-transparent hover:bg-gray-50 border border-[#333] text-[#333] font-bold rounded">
+      <a target="_blank" :href="product.AffiateLink + `nuxt-dev-21`">Altre recensioni...</a>
+    </button>
+  </div>
+</div>
 
-          <button
-                type="button"
-                class="w-full mt-10 px-4 py-2.5 bg-transparent hover:bg-gray-50 border border-[#333] text-[#333] font-bold rounded"
-              >
-              <a target="_blank" :href="product.AffiateLink + `nuxt-dev-21`">Altre recensioni...</a>
-              </button>
-
-        </div>
-        
-      </div>
 
 <div class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
   <h3 class="text-lg font-bold text-[#333]">Informazioni prodotto</h3>
@@ -363,16 +347,24 @@ if (selectedProduct) {
 
 
 
-// Funzione per ottenere le recensioni del prodotto
+
+// Funzione per ottenere le recensioni del prodotto con avatar random
 const productReviews = (product) => {
   const reviews = [];
   for (let i = 1; i <= 8; i++) {
     if (product[`Review${i}`]) {
-      reviews.push({ id: i, author: `User ${i}`, text: product[`Review${i}`] });
+      const randomAvatar = `https://xsgames.co/randomusers/avatar.php?g=male&random=${Math.random()}`;
+      reviews.push({ 
+        id: i, 
+        author: `User ${i}`, 
+        text: product[`Review${i}`],
+        avatar: randomAvatar 
+      });
     }
   }
   return reviews;
 };
+
 
 useServerSeoMeta({
   ogTitle: () => `Recensioni ` + selectedProduct.Title,
