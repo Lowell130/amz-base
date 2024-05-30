@@ -238,4 +238,21 @@ watchEffect(() => {
     currentPage.value = page;
   }
 });
+
+
+
+useServerSeoMeta({
+  ogTitle: () => "Schede Video per PC - Le Migliori GPU Disponibili",
+  title: () => "Schede Video per PC | Migliori GPU per il Gaming e il Lavoro",
+  description: () => "Scopri la nostra vasta selezione di schede video per PC. Trova le migliori GPU per il gaming e il lavoro, con prestazioni grafiche eccezionali e tecnologie avanzate.",
+  ogDescription: () => "Esplora le migliori schede video per PC disponibili sul nostro sito. Scegli tra una vasta gamma di GPU con prestazioni elevate per ogni esigenza di gioco e lavoro.",
+  // ogImage: () => "/path/to/your/og-graphics-cards-image.jpg",
+  // ogImageUrl: () => "/path/to/your/og-graphics-cards-image.jpg",
+  twitterCard: () => "summary_large_image",
+  twitterTitle: () => "Schede Video per PC | Migliori GPU per il Gaming e il Lavoro",
+  twitterDescription: () => "Trova le migliori schede video per il tuo PC. Esplora la nostra gamma di GPU con prestazioni grafiche eccellenti e tecnologie avanzate per il gaming e il lavoro.",
+  // twitterImage: () => "/path/to/your/twitter-graphics-cards-image.jpg"
+});
+
+
 </script>

@@ -238,4 +238,22 @@ watchEffect(() => {
     currentPage.value = page;
   }
 });
+
+
+
+useServerSeoMeta({
+  ogTitle: () => "Portatili da Lavoro e da Gaming - Scopri i Migliori Modelli",
+  title: () => "Portatili da Lavoro e da Gaming | I Migliori Modelli Disponibili",
+  description: () => "Esplora la nostra selezione di portatili da lavoro e da gaming. Trova i migliori laptop per le tue esigenze professionali e di gioco, con prestazioni eccellenti e design innovativi.",
+  ogDescription: () => "Scopri i migliori portatili da lavoro e da gaming disponibili sul nostro sito. Scegli tra una vasta gamma di modelli con prestazioni elevate per ogni necessità.",
+  // ogImage: () => "/path/to/your/og-laptops-image.jpg",
+  // ogImageUrl: () => "/path/to/your/og-laptops-image.jpg",
+  twitterCard: () => "summary_large_image",
+  twitterTitle: () => "Portatili da Lavoro e da Gaming | I Migliori Modelli Disponibili",
+  twitterDescription: () => "Trova i migliori portatili da lavoro e da gaming sul nostro sito. Esplora una vasta gamma di laptop con prestazioni eccellenti e design all'avanguardia.",
+  // twitterImage: () => "/path/to/your/twitter-laptops-image.jpg"
+});
+
+
+
 </script>

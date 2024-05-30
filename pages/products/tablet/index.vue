@@ -238,4 +238,21 @@ watchEffect(() => {
     currentPage.value = page;
   }
 });
+
+
+useServerSeoMeta({
+  ogTitle: () => "Tablet - Scopri i Migliori Modelli Disponibili",
+  title: () => "Tablet | I Migliori Modelli per Lavoro, Studio e Divertimento",
+  description: () => "Esplora la nostra selezione di tablet. Trova i migliori modelli per lavoro, studio e intrattenimento, con caratteristiche avanzate e prestazioni elevate.",
+  ogDescription: () => "Scopri i migliori tablet disponibili sul nostro sito. Scegli tra una vasta gamma di modelli con funzionalità avanzate per ogni esigenza di lavoro, studio e divertimento.",
+  // ogImage: () => "/path/to/your/og-tablets-image.jpg",
+  // ogImageUrl: () => "/path/to/your/og-tablets-image.jpg",
+  twitterCard: () => "summary_large_image",
+  twitterTitle: () => "Tablet | I Migliori Modelli per Lavoro, Studio e Divertimento",
+  twitterDescription: () => "Trova il tablet perfetto per le tue esigenze. Esplora la nostra gamma di tablet con caratteristiche avanzate e prestazioni eccellenti per lavoro, studio e divertimento.",
+  // twitterImage: () => "/path/to/your/twitter-tablets-image.jpg"
+});
+
+
+
 </script>

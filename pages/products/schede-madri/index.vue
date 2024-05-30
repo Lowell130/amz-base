@@ -235,4 +235,20 @@ watchEffect(() => {
     currentPage.value = page;
   }
 });
+
+
+useServerSeoMeta({
+  ogTitle: () => "Schede Madri per PC - Trova la Scheda Madre Perfetta",
+  title: () => "Schede Madri per PC | Migliori Modelli Disponibili",
+  description: () => "Esplora la nostra selezione di schede madri per PC. Trova la scheda madre ideale per il tuo sistema, con supporto per le ultime tecnologie e prestazioni affidabili.",
+  ogDescription: () => "Scopri le migliori schede madri per PC disponibili sul nostro sito. Scegli tra una vasta gamma di modelli con le ultime innovazioni tecnologiche per ogni esigenza.",
+  // ogImage: () => "/path/to/your/og-motherboards-image.jpg",
+  // ogImageUrl: () => "/path/to/your/og-motherboards-image.jpg",
+  twitterCard: () => "summary_large_image",
+  twitterTitle: () => "Schede Madri per PC | Migliori Modelli Disponibili",
+  twitterDescription: () => "Trova la scheda madre perfetta per il tuo PC. Esplora la nostra vasta gamma di schede madri con supporto per le ultime tecnologie e prestazioni eccellenti.",
+  // twitterImage: () => "/path/to/your/twitter-motherboards-image.jpg"
+});
+
+
 </script>

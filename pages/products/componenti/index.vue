@@ -238,4 +238,27 @@ watchEffect(() => {
     currentPage.value = page;
   }
 });
+
+
+
+
+
+
+useServerSeoMeta({
+  ogTitle: () => "Lista Componenti per PC - SSD, HDD, Schede Madri, Schede Video, RAM e Altro",
+  title: () => "Componenti per PC | SSD, HDD, Schede Madri, Schede Video, RAM e Altro",
+  description: () => "Scopri la nostra vasta selezione di componenti per PC: SSD, hard disk esterni, schede madri, schede video, RAM e molto altro. Trova i migliori prodotti per aggiornare e potenziare il tuo computer.",
+  ogDescription: () => "Esplora la nostra collezione di componenti per PC, inclusi SSD, HDD, schede madri, schede video e RAM. Trova i migliori componenti per migliorare le prestazioni del tuo computer.",
+  // ogImage: () => "/path/to/your/og-image.jpg",
+  // ogImageUrl: () => "/path/to/your/og-image.jpg",
+  twitterCard: () => "summary_large_image",
+  twitterTitle: () => "Componenti per PC | SSD, HDD, Schede Madri, Schede Video, RAM e Altro",
+  twitterDescription: () => "Trova i migliori componenti per PC: SSD, HDD, schede madri, schede video, RAM e altro per aggiornare il tuo computer.",
+  // twitterImage: () => "/path/to/your/twitter-image.jpg"
+});
+
+
+
+
+
 </script>
