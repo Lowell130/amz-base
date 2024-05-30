@@ -336,7 +336,7 @@ const { id } = useRoute().params;
 const router = useRouter();
 
 const { pending, data: products } = await useFetch(
-  "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/componenti",
+  "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/portatili",
   {
     lazy: false,
     transform: (products) => {
