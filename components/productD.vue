@@ -93,7 +93,7 @@ const dfilteredProducts = computed(() => {
   const filtered = portatiliProducts.value.filter(
     (productd) => parseFloat(productd.price) > 0 && productd.rank !== 0
   );
-  return filtered.slice(0, 4); // Restituisce solo i primi 4 prodotti
+  return filtered.slice(0, 8); // Restituisce solo i primi 4 prodotti
 });
 
 

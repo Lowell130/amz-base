@@ -79,7 +79,7 @@
              <p class="text-[#333] text-3xl font-bold">{{ product.Price }}</p>
            </div>
 
-             
+          
 
            <div class="flex flex-wrap gap-4 mt-10">
              <button
@@ -93,11 +93,13 @@
          </div>
        </div>
 
-   
+       <div class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
+        <div class="text-sm" v-html="formatReview(selectedProduct.RecensioneAI)"></div>
+       </div>
 
               
        <div class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
-  <h3 class="text-lg font-bold text-[#333]">Recensioni</h3>
+  <h3 class="text-lg font-bold text-[#333]">Recensioni acquirenti</h3>
   <div class="mt-6">
     <div v-if="productReviews(product).length > 0">
       <div v-for="review in productReviews(product)" :key="review.id">
@@ -371,6 +373,19 @@ const productReviews = (product) => {
     }
   }
   return reviews;
+};
+
+// Funzione per formattare la recensione del prodotto
+const formatReview = (review) => {
+  return review.split('\n').map(paragraph => {
+    // Controlla se il paragrafo è un titolo (termina con ":")
+    if (paragraph.trim().endsWith(":")) {
+      // Applica la classe Tailwind per il grassetto solo ai titoli
+      return `<p class="font-bold">${paragraph}</p>`;
+    } else {
+      return `<p>${paragraph}</p>`;
+    }
+  }).join('');
 };
 
 useServerSeoMeta({

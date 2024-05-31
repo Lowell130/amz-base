@@ -93,7 +93,7 @@ const cfilteredProducts = computed(() => {
   const filtered = tabletProducts.value.filter(
     (productc) => parseFloat(productc.price) > 0 && productc.rank !== 0
   );
-  return filtered.slice(0, 4); // Restituisce solo i primi 4 prodotti
+  return filtered.slice(0, 8); // Restituisce solo i primi 4 prodotti
 });
 
 
