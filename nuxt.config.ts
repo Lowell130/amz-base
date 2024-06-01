@@ -19,9 +19,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  head: {
-    meta: [
-      { name: 'google-site-verification', content: 'Q-VK_2Se54rJT10RvyOYgD3xX9uieENzzQ7vPsh64F0' }
-    ]
-  }
+  // head: {
+  //   meta: [
+  //     { name: 'google-site-verification', content: 'Q-VK_2Se54rJT10RvyOYgD3xX9uieENzzQ7vPsh64F0' }
+  //   ]
+  // }
 });

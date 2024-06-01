@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto size-full">
+   <div class="mx-auto size-full">
     <header>
       <NavBar />
     </header>
@@ -15,4 +15,11 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+useServerSeoMeta({
+  'google-site-verification': 'Q-VK_2Se54rJT10RvyOYgD3xX9uieENzzQ7vPsh64F0',
+});
+</script>
+
 
