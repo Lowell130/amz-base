@@ -16,17 +16,3 @@
   </div>
 </template>
 
-<script>
-export default {
-  head() {
-    return {
-      meta: [
-        {
-          name: "google-site-verification",
-          content: "Q-VK_2Se54rJT10RvyOYgD3xX9uieENzzQ7vPsh64F0",
-        },
-      ],
-    };
-  },
-};
-</script>
