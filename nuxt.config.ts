@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   nitro: {
     static: true,
   },
+
+  image: {
+    domains: ['amazon.it']
+  },
   
   site: {  
     url: 'https://eidosinformatica.it',
@@ -10,7 +14,7 @@ export default defineNuxtConfig({
     description: 'Migliori prezzi e recensioni per prodotti di informatica, tablet, portatili, componenti e altro ancora',
     defaultLocale: 'it', // not needed if you have @nuxtjs/i18n installed    
   },
-  modules: ['@nuxtjs/seo'],
+  modules: ['@nuxtjs/seo','@nuxt/image'],
   devtools: { enabled: false },
   css: ['~/assets/css/main.css'],
   postcss: {
