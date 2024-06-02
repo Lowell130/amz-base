@@ -37,11 +37,6 @@
  
  </ol>
 </nav>
-
- 
-
-
-
  </div>
    <div
      v-for="product in products"
@@ -306,6 +301,7 @@
 </div>
 
 
+<InnerCard />
 
 
 
