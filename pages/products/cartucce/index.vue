@@ -3,7 +3,7 @@
       <div v-if="pending">
       <div class="pt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
     >
-<div role="status" v-for="productb in paginatedProducts" :key="productb.id" class="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700">
+<div role="status" v-for="productw in paginatedProducts" :key="productw.id" class="max-w-sm p-4 border border-gray-200 rounded shadow animate-pulse md:p-6 dark:border-gray-700">
     <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
         <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
             <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z"/>
@@ -29,21 +29,21 @@
 
     </div>
       <div v-else class="pt-28 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        <div v-for="productb in paginatedProducts" :key="productb.id" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div v-for="productw in paginatedProducts" :key="productw.id" class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <div>
-            <nuxt-link :to="`/products/schede-video/${productb.id}`">
-              <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="productb.image" :alt="productb.title ? productb.title : ''"/>
+            <nuxt-link :to="`/products/cartucce/${productw.id}`">
+              <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="productw.image" :alt="productw.title ? productw.title : ''"/>
 
-              <!-- <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="productb.image" :alt="productb.title ? productb.title : ''"/> -->
+              <!-- <img class="p-8 max-w-[15rem] h-[15rem] object-contain mx-auto" :src="productw.image" :alt="productw.title ? productw.title : ''"/> -->
             </nuxt-link>
           </div>
           <div class="px-5 pb-5">
-            <nuxt-link :to="`/products/schede-video/${productb.id}`" :title="productb.title">
+            <nuxt-link :to="`/products/cartucce/${productw.id}`" :title="productw.title">
               <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                {{ truncateText(productb.title, 30) }}
+                {{ truncateText(productw.title, 30) }}
               </h5>
             </nuxt-link>
-            <p>{{ productb.rank }}</p>
+            <p>{{ productw.rank }}</p>
             <div class="flex items-center mt-2.5 mb-5">
             <div class="flex items-center space-x-1 rtl:space-x-reverse">
               <svg
@@ -109,7 +109,7 @@
           </div>
           <div class="flex items-center justify-between">
             <span class="text-3xl font-bold text-gray-900 dark:text-white"
-              >{{productb.price}}</span
+              >{{productw.price}}</span
             >
             <a
               href="#"
@@ -171,18 +171,18 @@ const pageSize = 20;
 const currentPage = ref(parseInt(route.query.page) || 1);
 
 const { pending, data: allProducts } = useFetch(
-  "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/schedevideo",
+  "https://eu-central-1.aws.data.mongodb-api.com/app/data-xdnek/endpoint/cartucce",
   {
     lazy: false,
-    transform: (productbs) => {
-      return productbs.map((productb) => ({
-        id: productb._id,
-        title: productb.Title,
-        image: productb.Thumbnail,
-        brand: productb.Brand,
-        asin: productb.ASIN,
-        price: productb.Price,
-        rank: productb.SalesRank
+    transform: (productws) => {
+      return productws.map((productw) => ({
+        id: productw._id,
+        title: productw.Title,
+        image: productw.Thumbnail,
+        brand: productw.Brand,
+        asin: productw.ASIN,
+        price: productw.Price,
+        rank: productw.SalesRank
       }));
     },
   }
@@ -192,7 +192,7 @@ const filteredProducts = computed(() => {
   if (!allProducts.value) {
     return [];
   }
-  return allProducts.value.filter(productb => parseFloat(productb.price) > 0 && productb.rank !== 0);
+  return allProducts.value.filter(productw => parseFloat(productw.price) > 0 && productw.rank !== 0);
 });
 
 const totalPages = computed(() => 
@@ -240,19 +240,18 @@ watchEffect(() => {
 });
 
 
-
 useServerSeoMeta({
-  ogTitle: () => "Schede Video per PC - Le Migliori GPU Disponibili",
-  title: () => "Schede Video per PC | Migliori GPU per il Gaming e il Lavoro",
-  description: () => "Scopri la nostra vasta selezione di schede video per PC. Trova le migliori GPU per il gaming e il lavoro, con prestazioni grafiche eccezionali e tecnologie avanzate.",
-  ogDescription: () => "Esplora le migliori schede video per PC disponibili sul nostro sito. Scegli tra una vasta gamma di GPU con prestazioni elevate per ogni esigenza di gioco e lavoro.",
-  // ogImage: () => "/path/to/your/og-graphics-cards-image.jpg",
-  // ogImageUrl: () => "/path/to/your/og-graphics-cards-image.jpg",
+  ogTitle: () => "Cartucce per Stampanti | Compatibili e Originali per Ogni Esigenza",
+  title: () => "Cartucce per Stampanti | Compatibili e Originali per Ogni Esigenza",
+  description: () => "Ampia gamma di cartucce per stampanti compatibili e originali per tutte le tue esigenze di stampa. Massima qualità e risparmio garantiti.",
+  ogDescription: () => "Scopri la nostra gamma di cartucce per stampanti compatibili e originali. Massima qualità e risparmio per stampe perfette.",
+  // ogImage: () => "/path/to/your/og-cartucce-image.jpg",
   twitterCard: () => "summary_large_image",
-  twitterTitle: () => "Schede Video per PC | Migliori GPU per il Gaming e il Lavoro",
-  twitterDescription: () => "Trova le migliori schede video per il tuo PC. Esplora la nostra gamma di GPU con prestazioni grafiche eccellenti e tecnologie avanzate per il gaming e il lavoro.",
-  // twitterImage: () => "/path/to/your/twitter-graphics-cards-image.jpg"
+  twitterTitle: () => "Cartucce per Stampanti | Compatibili e Originali per Ogni Esigenza",
+  twitterDescription: () => "Trova le cartucce per stampanti perfette per le tue esigenze. Compatibili e originali per stampe di alta qualità a prezzi convenienti.",
+  // twitterImage: () => "/path/to/your/twitter-cartucce-image.jpg",
 });
+
 
 
 </script>

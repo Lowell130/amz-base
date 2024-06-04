@@ -71,7 +71,11 @@
          </div>
 
          <div class="lg:col-span-2">
-           <small>{{ product.Marca }}</small>
+          <small>
+              <span v-if="product.Marca">{{ product.Marca }} - </span>
+              <span v-else>NOBRAND - </span>
+              {{ product.ASIN }}
+            </small>
            <h2 class="text-2xl font-normal text-[#333]">
             <a target="_blank" :href="product.AffiateLink + `nuxt-dev-21`">{{ product.Title }}</a> 
            </h2>
@@ -93,6 +97,7 @@
          </div>
        </div>
 
+       <InnerCardStampanti />
           
        <div class="mt-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 p-6">
   <h3 class="text-lg font-bold text-[#333]">Recensioni</h3>

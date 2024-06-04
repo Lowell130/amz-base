@@ -152,9 +152,9 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
 
-definePageMeta({
-  title: 'My Page Title'
-})
+// definePageMeta({
+//   title: 'My Page Title'
+// })
 
 // Aggiungi il filtro per limitare il numero di caratteri nel titolo
 const truncateText = (text, maxLength) => {

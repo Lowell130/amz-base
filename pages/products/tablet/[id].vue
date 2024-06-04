@@ -66,7 +66,11 @@
          </div>
 
          <div class="lg:col-span-2">
-           <small>{{ product.Marca }}</small>
+          <small>
+              <span v-if="product.Marca">{{ product.Marca }} - </span>
+              <span v-else>NOBRAND - </span>
+              {{ product.ASIN }}
+            </small>
            <h2 class="text-2xl font-normal text-[#333]">
             <a target="_blank" :href="product.AffiateLink + `nuxt-dev-21`">{{ product.Title }}</a> 
            </h2>
