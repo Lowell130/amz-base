@@ -140,9 +140,7 @@
               type="button"
               class="w-full mt-10 px-4 py-2.5 bg-transparent hover:bg-gray-50 border border-[#333] text-[#333] font-bold rounded"
             >
-              <a target="_blank" :href="product.AffiateLink + `nuxt-dev-21`"
-                >Altre recensioni...</a
-              >
+              <a target="_blank" :href="product.AffiateLink + `nuxt-dev-21`">Altre recensioni...</a>
             </button>
           </div>
         </div>
